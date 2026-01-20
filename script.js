@@ -1,7 +1,18 @@
+// ===== ELEMENTOS =====
 const input = document.getElementById('username');
 const btn = document.getElementById('searchBtn');
 const result = document.getElementById('result');
+const themeToggle = document.getElementById('themeToggle');
 
+// ===== DARK MODE (carregar tema salvo) =====
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark');
+  themeToggle.textContent = '☀️ Modo claro';
+}
+
+// ===== FUNÇÃO PRINCIPAL =====
 async function buscarUsuario() {
   const user = input.value.trim();
   if (!user) return;
@@ -28,6 +39,7 @@ async function buscarUsuario() {
   }
 }
 
+// ===== EVENTOS =====
 btn.addEventListener('click', buscarUsuario);
 
 input.addEventListener('keyup', (e) => {
@@ -36,3 +48,12 @@ input.addEventListener('keyup', (e) => {
   }
 });
 
+// ===== TOGGLE DARK MODE =====
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+  themeToggle.textContent = isDark ? '☀️ Modo claro' : '🌙 Modo escuro';
+});
