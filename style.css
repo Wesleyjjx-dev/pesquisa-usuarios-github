@@ -27,3 +27,8 @@ input, button {
   font-style: italic;
   color: #555;
 }
+
+.error {
+  margin-top: 10px;
+  color: red;
+}
