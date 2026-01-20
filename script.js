@@ -21,7 +21,7 @@ btn.addEventListener('click', async () => {
       <a href="${data.html_url}" target="_blank">Ver perfil</a>
     `;
   } catch (error) {
-    result.innerHTML = 'Usuário não encontrado 😕';
+    result.innerHTML = '<p class="error">Usuário não encontrado 😕</p>';
   }
 });
 input.addEventListener('keydown', (e) => {
