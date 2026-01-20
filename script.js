@@ -38,13 +38,15 @@ async function buscarUsuario() {
     const data = await response.json();
 
     result.innerHTML = `
-      <img src="${data.avatar_url}" width="100">
-      <h2>${data.name || data.login}</h2>
-      ${data.bio ? `<p>${data.bio}</p>` : ''}
-      <p>👥 ${data.followers} seguidores · ${data.following} seguindo</p>
-      ${data.location ? `<p>📍 ${data.location}</p>` : ''}
-      <a href="${data.html_url}" target="_blank">Ver perfil</a>
-    `;
+  <img src="${data.avatar_url}" width="100">
+  <h2>${data.name || data.login}</h2>
+  ${data.bio ? `<p>${data.bio}</p>` : ''}
+  <p>
+    👥 ${data.followers} seguidores · 
+    ${data.following} seguindo
+  </p>
+  ${data.location ? `<p>📍 ${data.location}</p>` : ''}
+  <a href="${data.html_url}" target="_blank">Ver perfil</a>;
   } catch {
     result.innerHTML = '<p class="error">Usuário não encontrado 😕</p>';
   }
