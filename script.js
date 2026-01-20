@@ -6,7 +6,7 @@ btn.addEventListener('click', async () => {
   const user = input.value.trim();
   if (!user) return;
 
-  result.innerHTML = 'Carregando...';
+  result.innerHTML = '<p class="loading">Buscando usuário...</p>';
 
   try {
     const response = await fetch(`https://api.github.com/users/${user}`);
