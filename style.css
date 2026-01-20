@@ -61,6 +61,11 @@ button:hover {
   margin-top: 15px;
 }
 
+#result p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
 #result img {
   border-radius: 50%;
   margin-top: 10px;
