@@ -24,3 +24,8 @@ btn.addEventListener('click', async () => {
     result.innerHTML = 'Usuário não encontrado 😕';
   }
 });
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    btn.click();
+  }
+});
